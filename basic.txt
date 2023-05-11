@@ -1,0 +1,121 @@
+Who is the founder of C++?
+1. Bjarne Stroustrup               2. Dennis M. Ritchie
+3. Guido van Rossum                4. Brendan Eich
+How many loops are there in c++?
+1. One            2. Two
+3. three          4. four 
+How many types of function have?
+1. One                    2. Two
+3. three                  4. four
+Where does static variable save in c++?
+1. RAM                  2. ROM
+3. Heap                 4. Stack
+A variable name can starts with a/an zero/integer?
+1. YES                  2. NO
+What is C++?
+1. C++ is an object oriented programming language" 
+2. C++ is a procedural programming language  
+3. C++ supports both procedural and object oriented programming language 
+4. C++ is a functional programming language  
+Which of the following is the correct syntax of including a user defined header files in C++?
+1. #include [userdefined]         2. #include “userdefined”
+3. #include <userdefined.h>       4. #include <userdefined>
+4. Which of the following is used for comments in C++?
+1. /* comment */                  2. // comment */
+3. // comment                     4. both // comment or /* comment */
+Which of the following user-defined header file extension used in c++?
+1. hg                                2. cpp 
+3. h                                 4. hf
+Which of the following is a correct identifier in C++?
+1.  VAR_1234                            2. $var_name
+3.  7VARNAME                            3. 7var_name
+Which of the following is not a type of Constructor in C++?
+1. Default constructor                   2. Parameterized constructor
+3. Copy constructor                      4. Friend constructor 
+Which of the following approach is used by C++?
+1. Left-right                          2. Right-left
+3. Bottom-up                           4. Top-down
+What is the difference between delete and delete[] in C++?
+1. delete is syntactically correct but delete[] is wrong and hence will give an error if used in any case
+2. delete is used to delete normal objects whereas delete[] is used to pointer objects
+3. delete is a keyword whereas delete[] is an identifier
+4. delete is used to delete single object whereas delete[] is used to multiple(array/pointer of) objects
+Which of the following is correct about this pointer in C++?
+1. this pointer is passed as a hidden argument in all static variables of a class
+2. this pointer is passed as a hidden argument in all the functions of a class
+3. this pointer is passed as a hidden argument in all non-static functions of a class
+4. this pointer is passed as a hidden argument in all static functions of a class
+Which of the following type is provided by C++ but not C?
+1. double                                 2. float
+3. int                                    4. bool
+By default, all the files in C++ are opened in _________ mode.
+1. Binary                             2. VTC
+3. Text                               4. ISCII
+Which of the following correctly declares an array in C++?
+1. array{10}                          2. array array[10];
+3. int array;                         4. int array[10];
+What is the size of wchar_t in C++?
+1. Based on the number of bits in the system     2. 2 or 4
+3. 4                                             4. 2
+Which is more effective while calling the C++ functions?
+1. call by object
+2. call by pointer
+3. call by value
+4. call by reference 
+Which keyword is used to define the macros in c++?
+1. #macro                           2. #define
+3. macro                            4. define
+The C++ code which causes abnormal termination/behaviour of a program should be written under _________ block.
+1. catch                           2. throw
+3. try                             4. finally
+What is Inheritance in C++?
+1. C++ technique to enhance multiple inheritance
+2. C++ technique to ensure that a private member of the base class can be accessed somehow
+3. C++ technique to avoid multiple inheritances of classes
+4. C++ technique to avoid multiple copies of the base class into children/derived class
+Which of the following symbol is used to declare the preprocessor directives in C++?
+1. $*                                         2. ^
+3. #                                          4. *
+What is meant by a polymorphism in C++?
+1. class having only single form
+2. class having four forms
+3. class having many forms
+4. class having two forms
+What is abstract class in C++?
+1. Any Class in C++ is an abstract class      2. Class from which any class is derived
+3. Class specifically used as a base class with atleast one virtual functions
+4. Class specifically used as a base class with atleast one pure virtual functions
+Which of the following constructors are provided by the C++ compiler if not defined in a class?
+1. Copy constructor                             2. Default constructor
+3. Assignment constructor                       4. All of the mentioned
+How structures and classes in C++ differ?
+1. Structures by default hide every member whereas classes do not
+2.* In Structures, members are public by default whereas, in Classes, they are private by default
+3. Structures cannot have private members whereas classes can have
+4. In Structures, members are private by default whereas, in Classes, they are public by default
+What is the benefit of c++ input and output over c input and output?
+1. Both Type safety & Exception
+2. Sequence container
+3. Exception
+4.* Type safety
+Which of the following is the correct syntax to print the message in C++ language?
+1. cout <<"Hello world!";*                     2. Cout << Hello world! ;
+3. Out <<"Hello world!;                       4. None of the above
+Which of the following is the correct identifier?
+1. $var_name                               2. VAR_123*
+3. varname@                                4. None of the above
+Which of the following is the address operator?
+1. @                                       2.  #
+3. &*                                      4.   %
+Which of the following features must be supported by any programming language to become a pure object-oriented programming language?
+1. Encapsulation                             2. Inheritance
+3. Polymorphism                              3. All of the above*
+The programming language that has the ability to create new data types is called___.
+1. Overloaded                                   2. Encapsulated
+3. Reprehensible                                4. Extensible*
+Which of the following is the correct syntax to read the single character to console in the C++ language?
+1. Read ch()                                  2. Getline vh()
+3. get(ch)                                    4. Scanf(ch)
+Which of the following statements is correct about the formal parameters in C++?
+1. Parameters with which functions are called      2. Parameters which are used in the definition of the function
+3. Variables other than passed parameters in a function     4. Variables that are never used in the function

@@ -1,0 +1,14 @@
+This line of code is using the seekg() function to set the file pointer to the beginning of the file. Here's a breakdown of what's happening:
+
+inFile is an instance of the ifstream class, which represents a file stream for reading data from a file.
+seekg() is a member function of the ifstream class that sets the position of the file pointer within the stream. The g in seekg() stands for "get", indicating that this function sets the read position within the stream.
+The first argument to seekg() is an offset value that specifies the number of bytes to seek from the given reference point.
+The second argument to seekg() is an ios::seekdir value that specifies the reference point from which to seek. In this case, ios::beg indicates that the offset value is relative to the beginning of the stream.
+So, inFile.seekg(0, ios::beg); sets the file pointer to the beginning of the file by seeking an offset of 0 bytes from the beginning of the stream. This ensures that subsequent reads from the file will start from the beginning of the file.
+
+
+ // to write in a text file
+    // string text = "fizza dominic";
+    // ofstream file("fizza.txt");
+    // file << text;
+    // to read a text file
