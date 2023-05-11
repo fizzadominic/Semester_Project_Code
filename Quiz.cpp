@@ -1,7 +1,5 @@
-//  FIZZA DOMINIC KHOKHAR
-//  ID: SP23-BSCS-0029
 #include <iostream>
-#include <Windows.h> // for adding delay after each cout statment
+#include <Windows.h>
 #include <unistd.h>
 using namespace std;
 void  Basic();
