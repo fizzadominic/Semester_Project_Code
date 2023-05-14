@@ -1,0 +1,329 @@
+Which of the following is the default return value of functions in C++?
+1. int                               2. char
+3. float                             4. void
+What happens to a function defined inside a class without any complex operations (like looping, a large number of lines, etc)?
+1. It becomes a virtual function of the class 
+2. It becomes a default calling function of the class
+2. It becomes a default calling function of the class
+3. It becomes an inline function of the class
+4. The program gives an error
+What is an inline function?
+1. A function that is expanded at each call during execution
+2. A function that is called during compile time
+3. A function that is not checked for syntax errors
+4. A function that is not checked for semantic analysis
+An inline function is expanded during ______________
+1. compile-time                  2.  run-time
+3. never expanded                4. end of the program
+In which of the following cases inline functions may not word?
+i) If the function has static variables.
+ii) If the function has global and register variables.
+iii) If the function contains loops
+iv) If the function is recursive
+1.  i, iv                          2.  iii, iv
+3. ii, iii, iv                     4. i, iii, iv
+When we define the default values for a function?
+1. When a function is defined               2. When a function is declared
+3. When the scope of the function is over   4. When a function is called
+Where should default parameters appear in a function prototype?
+1. To the rightmost side of the parameter list    
+2. To the leftmost side of the parameter list
+3. Anywhere inside the parameter list
+4. Middle of the parameter list
+If an argument from the parameter list of a function is defined constant then _______________
+1. It can be modified inside the function  2. It cannot be modified inside the function
+3. Error occurs                            4. Segmentation fault
+Which of the following feature is used in function overloading and function with default argument?
+1. Encapsulation                         2. Polymorphism
+3.  Abstraction                          4. Modularity
+From which function the execution of a C++ program starts?
+1. start() function                     2. main() function
+3. new() function                       4. end() function
+Which of the following is important in a function?
+1. Return type                             2. Function name
+3. Both return type and function name      4. The return type, function name and parameter list
+Which of the following function / types of function cannot have default parameters?
+1. Member function of class               2. Main()
+3. Member function of structure           4. Both B and C
+Correct way to declare pure virtual function in a C++ class is
+1. Virtual void foo() =0 ;                  2. Void virtual foo()= { 0 }
+3. Virtual void foo() {} = 0;               4. None of the above
+What is the scope of the variable declared in the user defined function?
+1. Whole program                     2. Only inside the {} block
+3. The main function                 4. None of the above
+Which of the following in Object Oriented Programming is supported by Function overloading and default arguments features of C++.
+1. Inheritance                                 2. Polymorphism
+3. Encapsulation                               4. None of these
+Predict the output:
+float x= 3.1496;
+cout << setprecision(2) << x;
+1. 3.14                       2. 3.15
+3. 3                          4. 3.1
+Which of the following statement is correct?
+1. Only one parameter of a function can be a default parameter.
+2. Minimum one parameter of a function must be a default parameter.
+3. All the parameters of a function can be default parameters.
+4. No parameter of a function can be default.
+Which of the following function declaration using default arguments is incorrect?
+1. int foo(int x, int y =5, int z=10)        2. int foo(int x=5, int y =10, int z)
+3. int foo(int x=5, int y, int z=10)         4. All are correct
+How are many minimum numbers of functions need to be presented in c++?
+1. 0                                           2. 1
+3. 2                                           4. 3
+Inline functions may not work ______ .
+i) If function contain static variables.      
+ii) If function contain global and register variables. 
+iii) If function returning value consists looping construct(i.e. for, while). 
+iv) If inline functions are recursive. 
+v) If function contains const value.
+1. Only i,iv & v                               2. Only ii,iii & v
+3. Only i,iii & iv                             4. All of the above
+Unary scope resolution operator is denoted by
+1. ! !                                2. % %
+3. :                                  4. :
+What is the output of this program?
+#include <iostream>
+using namespace std;
+void find()
+void find()
+{
+    cout<<"course";
+}
+int main()
+{
+    find();
+    return 0;
+} 
+1. course                                     2. coursecourse
+3. compile time error                         4. none of the mentioned
+What is the output of this program?       
+Note:Includes all required header files
+using namespace std;
+    void fun(int p, int q)
+    {
+        p = 20;
+        q = 10;
+    }
+    int main()
+    {
+        int p = 10;
+        fun(p, p);
+        cout << p;
+        return 0;
+    }                    
+1. 10                                         2. 20
+3. compile time error                         4. none of the mentioned
+What is the output of this program?     
+Note:Includes all required header files 
+using namespace std;
+    void copy (int& a, int& b, int& c)
+    {
+        a *= 2;
+        b *= 2;
+        c *= 2;
+    }
+    int main ()
+    {
+        int x = 2, y = 5, z = 7;
+        copy (x, y, z);
+        cout << "x =" << x << ", y =" << y << ", z =" << z;
+        return 0;
+    }       
+1. x =3, y =7, z =10               2. x =3, y =6, z =5
+3. x =4, y =10, z =14              4. None of the above
+What is the output of this program?        
+Note:Includes all required header files
+using namespace std;
+void fun(int &p)
+    {
+        p = 30;
+    }
+    int main()
+    {
+         int p = 5;
+         fun(p);
+         cout << "New value of p is " << p;
+         return 0;
+    }
+1. New value of p is 5             2. New value of p is 30
+3. New value of p is 15            4. None of the above
+Which of the following is true about the following program
+Note:Includes all required header files
+using namespace std;
+   long factorial (long p)
+    {
+        if (p > 1)
+            return (p * factorial (p + 1));
+        else
+            return (1);
+    }
+    int main ()
+    {
+        long q = 3;
+        cout << q << "! = " << factorial ( q );
+        return 0;
+    }
+1. 6                                                   2. 24
+3. segmentation fault                                  4. compile time error
+What will be the output of this program?       
+Note:Includes all required header files
+using namespace std;
+    void square (int *p)
+    {
+  *p = (*p + 1) * (*p);
+    }
+    int main ( )
+    {
+  int q = 5;
+        square(&q);
+        cout << q; 
+        return 0;
+    } 
+1. 25                                           2. compile time error
+3. 36                                           4. 30
+What will be the output of the following program?        
+Note:Includes all required header files
+using namespace std;
+    int gcd (int a, int b)
+    {
+        int temp;
+        while (b != 0) 
+        {
+            temp = a % b;
+            a = b;
+            b = temp;
+        }
+        return(a);
+    }
+    int main ()
+    {
+        int x = 7, y = 13;
+        cout << gcd(x, y);
+        return(0);
+    } 
+1. 7                                         2. 13
+3. 91                                        4. 1
+What will be the output of the following program?
+#include <iostream>
+using namespace std;
+void lfc(int p)
+{
+    cout << p;
+}
+void lfc(double  q)
+{
+    cout << q;
+}
+int main(void)
+{
+    lfc(5);
+    lfc(555.263);
+    return 0;
+}
+1. 5555.263                      2. 555.2635
+3. 555.263                       4. None of the mentioned
+What will be the output of the following program?
+#include <iostream>
+using namespace std;
+int lfc (int a, int b)
+{
+    return (a * b);
+}
+float lfc (float a, float b)
+{
+    return (a / b);
+}
+int main()
+{
+    int x = 5, y = 2;
+    float n = 5.0, m = 2.0;
+    cout << lfc(x, y) <<"	";
+    cout << lfc (n, m);
+    return 0;
+} 
+1. 10.0 5.0                         2. 5.0 2.5
+3. 10.0 5                           4. 10 2.5
+Which of the following function declaration is/are incorrect?
+1. int Sum(int a, int b = 2, int c = 3);     2. int Sum(int a = 5, int b);
+3. int Sum(int a = 0, int b, int c = 3);     4. Both B and C are incorrect.
+Which of the following functions are provided by compiler by default if we don't write in a C++ class?
+1. Copy constructor                    2. Assignment
+3. Constructor                         4. All the above
+How many can max number of arguments present in function in the c99 compiler?
+1. 99                                         2. 90
+3. 102                                        4. 127
+Which of the followings is/are not false about friend function ? 
+i) It can be called / invoked with class object.
+ii) It has objects as arguments. 
+iii) It can have built-in types as arguments. 
+iv) It must declared only in public part of a class. 
+v) It does not have this pointer as an argument.
+1. Only ii,iv                                     2. Only i,ii,v
+3. Only ii,iii,v                                  4. All of the above
+The maths function acos (x) stands for
+1. Inverse Cosine of x                            2. Inverse Sine of x
+3. Inverse Tangent of x                           4. Floor of x
+Which of the following statement is correct?
+1. Two functions having same number of argument, order and type of argument can be overloaded if both functions do not have any default argument.
+2. Overloaded function must have default arguments.
+3. Overloaded function must have default arguments starting from the left of argument list.
+4. A function can be overloaded more than once.
+Constant function in C++ can be declared as
+1. Void display()                          2. Void display() const
+3. Const void display()                    4. Void const display()
+Where does the execution of the program starts?
+1. User-defined function                  2. Main function
+3. Void function                          4. None of the above
+A friend function does not have 'this' pointer associated with it.
+1. TRUE                                  2. FALSE
+3. May Be                                4. Can't Say
+A programmer can create custom header files that must be end with
+1. .h extension                          2. .l extension
+3. .ios extension                        4. .a extension
+What will be the output of the following program?     
+void abc(int x=0, int y, int z=0)
+{
+  cout << x  << y << z;
+}
+1. abc () ;                             2. abc (h) ;
+3. abc (h,h) ;                          4. Both A and B
+What will be the output of the following program?
+int a =1 , b=2;        
+a=chg(b) ;
+cout << a << b ;
+If the function chg is coded as
+int chg(int x)
+    {
+x = 10;
+
+return ();
+} 
+then  
+1. It results in compile-time error              2. It results in run time error
+3. It prints 1 1 2                               4. It prints 1 1 1
+Choose the correct statements regarding inline functions.
+1. It speeds up execution                      2. It slows down execution
+3. It increases the code size                  4. Both A and C
+The compiler identifies a virtual function to be pure
+1. by the presence of the keyword pure         2. by its location in the program
+3. if it is equated to 0                       4. None of the above
+If many functions-have the same name, which of the following information, if present, will be used by the compiler to invoke the correct function to be used?
+1. The operator : :                           2. The return value of the function
+3. Function signature                         4. Both A & C
+Which of the following parameter passing mechanism(s) is/are supported by C++, but not by C?
+1. Pass by value                                2. Pass by reference
+3. Pass by value-result                         4. All of the above
+If a piece of code can be implemented as a macro or as an inline function, which of the following factors favour implementation as an inline function?
+1. Interacting with other components (like variables in an expression), in the correct way ..
+2. Flexibility to manipulate as a pointer
+3. Source code size
+4. Both A and B
+Assume that the random number generating function - rand( ), returns an integer between 0 and 10000 (both inclusive). If you want to simulate the throwing of a die using this random function, use the expression
+1. rand ( ) % 6                             2. rand ( ) % 6 + 1
+3. rand ( ) % 5 + 1                         4. None of the above
+How many types of function have?
+1. One                    2. Two
+3. three                  4. four
+What are mandatory parts in the function declaration?
+1. return type, function name       2. return type, function name, parameters
+3. parameters, function name        4. parameters, variables

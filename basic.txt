@@ -74,7 +74,7 @@ What is Inheritance in C++?
 3. C++ technique to avoid multiple inheritances of classes
 4. C++ technique to avoid multiple copies of the base class into children/derived class
 Which of the following symbol is used to declare the preprocessor directives in C++?
-1. $*                                         2. ^
+1. $                                         2. ^
 3. #                                          4. *
 What is meant by a polymorphism in C++?
 1. class having only single form
@@ -90,32 +90,100 @@ Which of the following constructors are provided by the C++ compiler if not defi
 3. Assignment constructor                       4. All of the mentioned
 How structures and classes in C++ differ?
 1. Structures by default hide every member whereas classes do not
-2.* In Structures, members are public by default whereas, in Classes, they are private by default
+2.In Structures, members are public by default whereas, in Classes, they are private by default
 3. Structures cannot have private members whereas classes can have
 4. In Structures, members are private by default whereas, in Classes, they are public by default
 What is the benefit of c++ input and output over c input and output?
 1. Both Type safety & Exception
 2. Sequence container
 3. Exception
-4.* Type safety
+4.Type safety
 Which of the following is the correct syntax to print the message in C++ language?
-1. cout <<"Hello world!";*                     2. Cout << Hello world! ;
+1. cout <<"Hello world!";                     2. Cout << Hello world! ;
 3. Out <<"Hello world!;                       4. None of the above
 Which of the following is the correct identifier?
-1. $var_name                               2. VAR_123*
+1. $var_name                               2. VAR_123
 3. varname@                                4. None of the above
 Which of the following is the address operator?
 1. @                                       2.  #
-3. &*                                      4.   %
+3. &                                       4.  %
 Which of the following features must be supported by any programming language to become a pure object-oriented programming language?
 1. Encapsulation                             2. Inheritance
-3. Polymorphism                              3. All of the above*
+3. Polymorphism                              4. All of the above
 The programming language that has the ability to create new data types is called___.
 1. Overloaded                                   2. Encapsulated
-3. Reprehensible                                4. Extensible*
+3. Reprehensible                                4. Extensible
 Which of the following is the correct syntax to read the single character to console in the C++ language?
 1. Read ch()                                  2. Getline vh()
 3. get(ch)                                    4. Scanf(ch)
 Which of the following statements is correct about the formal parameters in C++?
 1. Parameters with which functions are called      2. Parameters which are used in the definition of the function
 3. Variables other than passed parameters in a function     4. Variables that are never used in the function
+The C++ language is ______ object-oriented language.
+1. Pure Object oriented                               2. Not Object oriented
+3. Semi Object-oriented or Partial Object-oriented    4. None of the above
+C++ is a ___ type of language.
+1. High-level Language                           2. Low-level language
+3. Middle-level language                         4. None of the above
+For inserting a new line in C++ program, which one of the following statements can be used?
+1. \n                                            2. \r
+3. \a                                            4. None of the above
+Which one of the following represents the tab?
+1. \n                                           2. \t
+3. \r                                           4. None of the above
+How many types of the array are there in the C++ programming language?
+1. In the C++ programming language, there are three types of arrays
+2. In the C++ programming language, there are four types of arrays
+3. In the C++ programming language, there are two types of arrays
+4. Both A and B
+In C++, for what purpose the "rank()" is used?
+1. It returns the size of each dimension
+2. It returns the maximum number of elements that can be stored in the array
+3. It returns the dimension of the specified array
+4. None of the above
+Which of the following statements is correct about the class?
+1. An object is an instance of its class
+2. A class is an instance of its object
+3. An object is the instance of the data type of that class
+4. Both A and C
+Which of the following statement is not true about C++?
+1. Members of a class are public by default
+2. A class cannot have the private members
+3. A structure can have the member functions
+4. All of the above
+Which of the following given statement is completely true?
+I. In an object-oriented programming language, all the function calls are resolved at compile-time.
+II. In a procedure programming language, all the function calls are resolved at compile-time
+1. Only II
+2. Only I
+3. Both I & II
+4. None of the above
+Which one of the following cannot be used with the virtual keyword?
+1. Constructor                                              2. Destructor
+3. Member function                                          4. None of the above
+Which of the following is used for implementing the late binding?
+1. Operator Functions                                    2. Constant Functions
+3. Virtual Functions                                     4. Both A and B
+Which of the following statement is correct about the C++ programming language?
+1. In C++, both the Static and Dynamic type checking are allowed
+2. In C++, member function are allowed to be of the type canst
+3. In C++, Dynamic checking is allowed
+4. None of the above
+Which of the following is not a kind of inheritance?
+1. Distributed                                             2. Multiple
+3. Multi-level                                             4. Hierarchal
+What will happen if "In a C++ program a class has no name"?
+1. It is not even allowed in C++                   2. It will not have the Constructor
+3. It will not have the destructor                  4. Both B and C
+Which of the following concept refers to adding new components to the program at the run time?
+1. Dynamic Loading                               2. Dynamic binding
+3. Data hiding                                   4. Both A & B
+
+
+
+
+
+
+
+
+
