@@ -12,12 +12,29 @@
 #include <chrono>
 #include <thread>
 #include <fstream>
+
+int maxAnswers = 0;  // global varaibles to have an access 
+    int answer; 
+    int attempt= 0;
+    int score = 0;
+    int wrong = 0;
+    const  char leave;
+
 using namespace std;
 
+void createAccount();
+void login();
 void  Basic();
 void  Functions();
 void  Array();
 
+bool done (){    // trying to get the record 
+          if(true){
+            return true;
+          }
+    
+       return false ;
+}
 bool timeUp()   // timer function
 {
     static std::chrono::steady_clock::time_point begin = std::chrono::steady_clock::now();
@@ -33,8 +50,32 @@ bool timeUp()   // timer function
     return false;
 }
 
-int main()
-{
+// to keep a record of scores 
+
+
+int main(){
+       cout << "1. Create an account" << endl;
+        cout << "2. Login" << endl;
+        cout << "3. Exit" << endl;
+        cout << "Enter your choice: ";
+
+        int choice;
+        cin >> choice;
+
+        switch (choice) {
+            case 1:
+                createAccount();
+                break;
+            case 2:
+                login();
+                break;
+            case 3:
+                return 0;
+            default:
+                cout << "Invalid choice. Try again." << endl;
+        }
+
+
       cout <<"______________________________________________________________________ "<<endl;
     cout<<"     "<< "        Welcome to C++ challange             " << endl;
     cout <<"______________________________________________________________________ "<<endl; 
@@ -42,7 +83,7 @@ int main()
     int toStart;
     cout << "Enter 1 to start : ";
     cin >> toStart;  
-    if (toStart == 1){
+    if (toStart == 1){  
         sleep(1);
         cout << "     About challange   " << endl;
         cout<<endl;
@@ -60,32 +101,14 @@ int main()
         sleep(1);
         cout<<"     "<< "Basic  C++"<<endl;
         cout<<endl;
-        cout<<"          "<< " Loops "<<endl; 
-        cout<<"          "<< " Switch Case "<<endl; 
-        cout<<"          "<< " Varaibles "<<endl; 
-        cout<<"          "<< " Data types "<<endl; 
-        cout<<"          "<< " Conditional statments"<<endl; 
-        cout<<endl;
         sleep(1);
         cout<<"     "<<"Functions in c++"<<endl;
-        cout<<"          "<<"Basics of Function"<<endl;
-        cout<<"          "<<"All types of Function"<<endl;
-         cout<<endl;
+        cout<<endl;
         sleep(1);
         cout<<"     "<<"Array in c++"<<endl;
-        cout<<"          "<<"Basics of Array "<<endl;
-        cout<<"          "<<"All types of array"<<endl;
         cout<<endl;
 
-        sleep(1);
-        cout<<"Each session has 5 questions"<<endl;
-        cout<<"Each Question carries a 1 mark"<<endl;
-        cout<<"Top Scores will be displayed on the screem"<<endl;
-        cout<<"Rank 1 : 10 : "<<endl; 
-        cout<<"Rank 2 : 8 : "<<endl; 
-        cout<<"Rank 3 : 6 : "<<endl; 
-        cout<<"Rank 4 : 4 : "<<endl; 
-        cout<<"Rank 5 : 2: "<<endl; 
+        
     }
       sleep(1);
     cout<<"       " <<" Choose the Category you want to answer :"<<endl;
@@ -101,22 +124,21 @@ int main()
     cout<<"Enter Category : ";
     cin>>category;
     if(category==1){
+
        Basic(); 
     }else if(category==2 ){
+
        Functions();
     }else{
+
         Array();
     }
-    return 0;
+  return 0;
 }
 
 
 void  Basic(){
-    int maxAnswers = 0;
-    int answer;
-    int attempt= 0;
-    int score = 0;
-    int wrong = 0;
+    
     
     srand(time(NULL));
 
@@ -2617,20 +2639,23 @@ void  Basic(){
     {
         maxAnswers = score;
     }
-    std::cout << "Time's up! Maximum answers given: " << maxAnswers << std::endl;
-    std::cout << " Wrong answers given: " << wrong << std::endl;
-    std::cout << " Your total score is : " << score << std::endl;
-    std::cout << " Your total attempts are : " << attempt << std::endl;
+    cout << "Time's up! Maximum answers given: " << maxAnswers << endl;
+    cout << " Wrong answers given: " << wrong << endl;
+    cout << " Your total score is : " << score << endl;
+    cout << " Your total attempts are : " << attempt << endl;
+    cout<<endl;
+    cout<<"Enter to leave : "<<endl;
+    
  
 
   
 }
 void  Functions(){
-   int maxAnswers = 0;
-     int answer = 0;
-     int score= 0;
-     int wrong = 0;
-     int attempt = 0;
+//    int maxAnswers = 0;
+//      int answer = 0;
+//      int score= 0;
+//      int wrong = 0;
+//      int attempt = 0;
 
      srand(time(NULL));
      int arr[] = {0, 1, 2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49};
@@ -4660,13 +4685,2087 @@ void  Functions(){
      if (score >= maxAnswers){
         maxAnswers = score;
     }
-    std::cout << "Time's up! Maximum answers given: " << maxAnswers << std::endl;
-    std::cout << " Wrong answers given: " << wrong << std::endl;
-    std::cout << " No. of question you've attempted: " << attempt << std::endl;
-    std::cout << " Your total score is : " << score << std::endl;
+   cout << "Time's up! Maximum answers given: " << maxAnswers << std::endl;
+   cout << " Wrong answers given: " << wrong << std::endl;
+   cout << " No. of question you've attempted: " << attempt << std::endl;
+   cout << " Your total score is : " << score << std::endl;
 }
+
+
 void  Array(){
-  cout<<"You chose category three"<<endl;
+//   int maxAnswers = 0;
+//     int answer = 0;
+//     int score= 0;
+//     int wrong = 0;
+//     int attempt = 0;
+    srand(time(NULL));
+
+   
+    int arr[] = {0, 1, 2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49};
+
+    int questions = sizeof(arr) / sizeof(arr[0]);
+
+    for(int i=0; i<questions; i++){
+      int randomIndex = rand() % questions;
+      
+         bool alreadyGenerated = false;
+
+         for(int i=0; i<questions; i++){            
+
+         if(arr[i] == randomIndex){
+                 alreadyGenerated =true;
+         }      
+                  break; 
+
+         }
+         if(!alreadyGenerated){
+            // 01
+            if(arr[0] == arr[randomIndex]){
+            ifstream file02("array.txt");
+            string line; 
+            int lineCount =0;
+            while(getline(file02, line ) && lineCount < 3){
+                lineCount++;
+
+              if(lineCount < 1){
+                continue;
+              }
+              cout<<endl;
+              cout<<line<<endl;
+              if(lineCount == 3){
+                break;
+              }
+            }
+            cout<<endl;
+            cout<<"Enter your answer : ";
+            cin>>answer;
+
+            if(answer == 3){
+            cout<<endl;
+            cout << "Correct Answer!" << endl;
+            score += 1;
+            attempt += 1;
+            }
+            else{
+            cout << "Correct answer is 3. exception   " << endl;
+            cout<<"\n";
+            cout<<"Explanation: C++ provides a data structure, the array, which stores a fixed-size sequential collection of elements of the same type."<<endl;
+            cout << endl;
+            wrong += 1;
+            attempt += 1;
+            cout<<endl;
+            cout << wrong << " wrong answer : " << endl;
+            }
+            if(timeUp() == true){
+                break;
+            }
+            }
+            // 02
+            if(arr[1] == arr[randomIndex]){
+            ifstream file02("array.txt");
+            string line; 
+            int lineCount =0;
+            while(getline(file02, line ) && lineCount < 6){
+                lineCount++;
+
+              if(lineCount < 4){
+                continue;
+              }
+              cout<<endl;
+              cout<<line<<endl;
+              if(lineCount == 6){
+                break;
+              }
+            }
+            cout<<endl;
+            cout<<"Enter your answer : ";
+            cin>>answer;
+
+            if(answer == 4){
+            cout<<endl;
+            cout << "Correct Answer!" << endl;
+            score += 1;
+            attempt += 1;
+            }
+            else{
+            cout << "Correct answer is 4. std namespace  " << endl;
+            cout<<"\n";
+            cout<<"Explanation: Array type manipulation functions are declared incside the namespace std so you can use namespace std to use these functions."<<endl;
+            cout << endl;
+            wrong += 1;
+            attempt += 1;
+            cout<<endl;
+            cout << wrong << " wrong answer : " << endl;
+            }
+            if(timeUp() == true){
+                break;
+            }
+            }
+            // 03
+            if(arr[2] == arr[randomIndex]){
+            ifstream file02("array.txt");
+            string line; 
+            int lineCount =0;
+            while(getline(file02, line ) && lineCount < 11){
+                lineCount++;
+
+              if(lineCount < 7){
+                continue;
+              }
+              cout<<endl;
+              cout<<line<<endl;
+              if(lineCount == 11){
+                break;
+              }
+            }
+            cout<<endl;
+            cout<<"Enter your answer : ";
+            cin>>answer;
+
+            if(answer == 1){
+            cout<<endl;
+            cout << "Correct Answer!" << endl;
+            score += 1;
+            attempt += 1;
+            }
+            else{
+            cout << "Correct answer is 1. To check if a variable is array type or not" << endl;
+            cout<<"\n";
+            cout<<"Explanation: is_array() function is used to check whether a given variable is of array type or not"<<endl;
+            cout << endl;
+            wrong += 1;
+            attempt += 1;
+            cout<<endl;
+            cout << wrong << " wrong answer : " << endl;
+            }
+            if(timeUp() == true){
+                break;
+            }
+            }
+            // 04
+            if(arr[3] == arr[randomIndex]){
+            ifstream file02("array.txt");
+            string line; 
+            int lineCount =0;
+            while(getline(file02, line ) && lineCount < 24){
+                lineCount++;
+
+              if(lineCount <12){
+                continue;
+              }
+              cout<<endl;
+              cout<<line<<endl;
+              if(lineCount == 24){
+                break;
+              }
+            }
+            cout<<endl;
+            cout<<"Enter your answer : ";
+            cin>>answer;
+
+            if(answer == 1){
+            cout<<endl;
+            cout << "Correct Answer!" << endl;
+            score += 1;
+            attempt += 1;
+            }
+            else{
+            cout << "Correct answer is 1. 010 " << endl;
+            cout<<"\n";
+            cout<<"Explanation: As int and string are not of array type therefore 0 is printed corresponding to them and char[10] is an array of character of size 10 therefore 1 is printed corresponding to this. Hence answer is 010."<<endl;
+            cout << endl;
+            wrong += 1;
+            attempt += 1;
+            cout<<endl;
+            cout << wrong << " wrong answer : " << endl;
+            }
+            if(timeUp() == true){
+                break;
+            }
+            }
+            // 05
+            if(arr[4] == arr[randomIndex]){
+            ifstream file02("array.txt");
+            string line; 
+            int lineCount =0;
+            while(getline(file02, line ) && lineCount < 29){
+                lineCount++;
+
+              if(lineCount <25){
+                continue;
+              }
+              cout<<endl;
+              cout<<line<<endl;
+              if(lineCount == 29){
+                break;
+              }
+            }
+            cout<<endl;
+            cout<<"Enter your answer : ";
+            cin>>answer;
+
+            if(answer == 2){
+            cout<<endl;
+            cout << "Correct Answer!" << endl;
+            score += 1;
+            attempt += 1;
+            }
+            else{
+            cout << "Correct answer is 2. To check whether two variables have the same characteristics" << endl;
+            cout<<"\n";
+            cout<<"Explanation: is_same() function is used to check whether two variables have the same characteristics or not."<<endl;
+            cout << endl;
+            wrong += 1;
+            attempt += 1;
+            cout<<endl;
+            cout << wrong << " wrong answer : " << endl;
+            }
+            if(timeUp() == true){
+                break;
+            }
+            }
+
+            // 06
+            if(arr[5] == arr[randomIndex]){
+            ifstream file02("array.txt");
+            string line; 
+            int lineCount =0;
+            while(getline(file02, line ) && lineCount < 42){
+                lineCount++;
+
+              if(lineCount <30){
+                continue;
+              }
+              cout<<endl;
+              cout<<line<<endl;
+              if(lineCount == 42){
+                break;
+              }
+            }
+            cout<<endl;
+            cout<<"Enter your answer : ";
+            cin>>answer;
+
+            if(answer == 3){
+            cout<<endl;
+            cout << "Correct Answer!" << endl;
+            score += 1;
+            attempt += 1;
+            }
+            else{
+            cout << "Correct answer 3. 010" << endl;
+            cout<<"\n";
+            cout<<"Explanation: In 1st and 3rd case both the variables passed to is_same() function are different whereas for 2nd they are same. Hence the answer is 010."<<endl;
+            cout << endl;
+            wrong += 1;
+            attempt += 1;
+            cout<<endl;
+            cout << wrong << " wrong answer : " << endl;
+            }
+            if(timeUp() == true){
+                break;
+            }
+            }
+            // 07
+            if(arr[6] == arr[randomIndex]){
+            ifstream file02("array.txt");
+            string line; 
+            int lineCount =0;
+            while(getline(file02, line ) && lineCount < 47){
+                lineCount++;
+
+              if(lineCount <43){
+                continue;
+              }
+              cout<<endl;
+              cout<<line<<endl;
+              if(lineCount == 47){
+                break;
+              }
+            }
+            cout<<endl;
+            cout<<"Enter your answer : ";
+            cin>>answer;
+
+            if(answer == 4){
+            cout<<endl;
+            cout << "Correct Answer!" << endl;
+            score += 1;
+            attempt += 1;
+            }
+            else{
+            cout << "Correct answer 4. Returns the dimension of an array" << endl;
+            cout<<"\n";
+            cout<<"Explanation: rank() function returns the rank of the array i.e. the dimension of an array. For example, int arr[10][10] has rank 2."<<endl;
+            cout << endl;
+            wrong += 1;
+            attempt += 1;
+            cout<<endl;
+            cout << wrong << " wrong answer : " << endl;
+            }
+            if(timeUp() == true){
+                break;
+            }
+            }
+            // 08
+            if(arr[7] == arr[randomIndex]){
+            ifstream file02("array.txt");
+            string line; 
+            int lineCount =0;
+            while(getline(file02, line ) && lineCount < 60){
+                lineCount++;
+
+              if(lineCount < 48){
+                continue;
+              }
+              cout<<endl;
+              cout<<line<<endl;
+              if(lineCount == 60){
+                break;
+              }
+            }
+            cout<<endl;
+            cout<<"Enter your answer : ";
+            cin>>answer;
+
+            if(answer == 2){
+            cout<<endl;
+            cout << "Correct Answer!" << endl;
+            score += 1;
+            attempt += 1;
+            }
+            else{
+            cout << "Correct answer  2. 123" << endl;
+            cout<<"\n";
+            cout<<"Explanation: In this program first array has the single dimension, second one has two dimensions and third one has three dimension therefore the program prints 123."<<endl;
+            cout << endl;
+            wrong += 1;
+            attempt += 1;
+            cout<<endl;
+            cout << wrong << " wrong answer : " << endl;
+            }
+            if(timeUp() == true){
+                break;
+            }
+            }
+            // 09
+            if(arr[8] == arr[randomIndex]){
+            ifstream file02("array.txt");
+            string line; 
+            int lineCount =0;
+            while(getline(file02, line ) && lineCount < 65){
+                lineCount++;
+
+              if(lineCount < 61){
+                continue;
+              }
+              cout<<endl;
+              cout<<line<<endl;
+              if(lineCount == 65){
+                break;
+              }
+            }
+            cout<<endl;
+            cout<<"Enter your answer : ";
+            cin>>answer;
+
+            if(answer == 4){
+            cout<<endl;
+            cout << "Correct Answer!" << endl;
+            score += 1;
+            attempt += 1;
+            }
+            else{
+            cout << "Correct answer  4. Returns the size of a given dimension" << endl;
+            cout<<"\n";
+            cout<<"Explanation: The extent() function takes two parameters one denoting the array other showing the dimension for which the size we want to know. "<<endl;
+            cout << endl;
+            wrong += 1;
+            attempt += 1;
+            cout<<endl;
+            cout << wrong << " wrong answer : " << endl;
+            }
+            if(timeUp() == true){
+                break;
+            }
+            }
+            // 10
+            if(arr[9] == arr[randomIndex]){
+            ifstream file02("array.txt");
+            string line; 
+            int lineCount =0;
+            while(getline(file02, line ) && lineCount < 81){
+                lineCount++;
+
+              if(lineCount < 66){
+                continue;
+              }
+              cout<<endl;
+              cout<<line<<endl;
+              if(lineCount == 81){
+                break;
+              }
+            }
+            cout<<endl;
+            cout<<"Enter your answer : ";
+            cin>>answer;
+
+            if(answer == 2){
+            cout<<endl;
+            cout << "Correct Answer!" << endl;
+            score += 1;
+            attempt += 1;
+            }
+            else{
+            cout << "Correct answer  2. 102030" << endl;
+            cout<<"\n";
+            cout<<"Explanation: none"<<endl;
+            cout << endl;
+            wrong += 1;
+            attempt += 1;
+            cout<<endl;
+            cout << wrong << " wrong answer : " << endl;
+            }
+            if(timeUp() == true){
+                break;
+            }
+            }
+            // 11
+            if(arr[10] == arr[randomIndex]){
+            ifstream file02("array.txt");
+            string line; 
+            int lineCount =0;
+            while(getline(file02, line ) && lineCount < 84){
+                lineCount++;
+
+              if(lineCount < 82){
+                continue;
+              }
+              cout<<endl;
+              cout<<line<<endl;
+              if(lineCount == 84){
+                break;
+              }
+            }
+            cout<<endl;
+            cout<<"Enter your answer : ";
+            cin>>answer;
+
+            if(answer ==4){
+            cout<<endl;
+            cout << "Correct Answer!" << endl;
+            score += 1;
+            attempt += 1;
+            }
+            else{
+            cout << "Correct answer  4. Both A and C" << endl;
+            cout<<"\n";
+            cout<<"Explanation: Divide and conquer method. 20 Referring an element outside array bounds is a. A Syntax error."<<endl;
+            cout << endl;
+            wrong += 1;
+            attempt += 1;
+            cout<<endl;
+            cout << wrong << " wrong answer : " << endl;
+            }
+            if(timeUp() == true){
+                break;
+            }
+            }
+            // 12
+            if(arr[11] == arr[randomIndex]){
+            ifstream file02("array.txt");
+            string line; 
+            int lineCount =0;
+            while(getline(file02, line ) && lineCount < 87){
+                lineCount++;
+
+              if(lineCount < 85){
+                continue;
+              }
+              cout<<endl;
+              cout<<line<<endl;
+              if(lineCount == 87){
+                break;
+              }
+            }
+            cout<<endl;
+            cout<<"Enter your answer : ";
+            cin>>answer;
+
+            if(answer == 1){
+            cout<<endl;
+            cout << "Correct Answer!" << endl;
+            score += 1;
+            attempt += 1;
+            }
+            else{
+            cout << "Correct answer  1. Linear search  " << endl;
+            cout<<"\n";
+            cout<<"Explanation: Use filter if you want to find all items in an array that meet a specific condition."<<endl;
+            cout << endl;
+            wrong += 1;
+            attempt += 1;
+            cout<<endl;
+            cout << wrong << " wrong answer : " << endl;
+            }
+            if(timeUp() == true){
+                break;
+            }
+            }
+            // 13
+            if(arr[12] == arr[randomIndex]){
+            ifstream file02("array.txt");
+            string line; 
+            int lineCount =0;
+            while(getline(file02, line ) && lineCount < 90){
+                lineCount++;
+
+              if(lineCount < 88){
+                continue;
+              }
+              cout<<endl;
+              cout<<line<<endl;
+              if(lineCount == 90){
+                break;
+              }
+            }
+            cout<<endl;
+            cout<<"Enter your answer : ";
+            cin>>answer;
+
+            if(answer == 1){
+            cout<<endl;
+            cout << "Correct Answer!" << endl;
+            score += 1;
+            attempt += 1;
+            }
+            else{
+            cout << "Correct answer  1. Two-dimensional array   " << endl;
+            cout<<"\n";
+            cout<<"Explanation: A one-dimensional array of one-dimensional arrays is called. Multi-dimensional array."<<endl;
+            cout << endl;
+            wrong += 1;
+            attempt += 1;
+            cout<<endl;
+            cout << wrong << " wrong answer : " << endl;
+            }
+            if(timeUp() == true){
+                break;
+            }
+            }
+            // 14
+            if(arr[13] == arr[randomIndex]){
+            ifstream file02("array.txt");
+            string line; 
+            int lineCount =0;
+            while(getline(file02, line ) && lineCount < 93){
+                lineCount++;
+
+              if(lineCount < 91){
+                continue;
+              }
+              cout<<endl;
+              cout<<line<<endl;
+              if(lineCount == 93){
+                break;
+              }
+            }
+            cout<<endl;
+            cout<<"Enter your answer : ";
+            cin>>answer;
+
+            if(answer == 1){
+            cout<<endl;
+            cout << "Correct Answer!" << endl;
+            score += 1;
+            attempt += 1;
+            }
+            else{
+            cout << "Correct answer  1. Arrays    " << endl;
+            cout<<"\n";
+            cout<<"Explanation: An array is simply a sequence of values of the same type. The values stored in an array are called the elements of the array."<<endl;
+            cout << endl;
+            wrong += 1;
+            attempt += 1;
+            cout<<endl;
+            cout << wrong << " wrong answer : " << endl;
+            }
+            if(timeUp() == true){
+                break;
+            }
+            }
+            // 15
+            if(arr[14] == arr[randomIndex]){
+            ifstream file02("array.txt");
+            string line; 
+            int lineCount =0;
+            while(getline(file02, line ) && lineCount < 96){
+                lineCount++;
+
+              if(lineCount < 94){
+                continue;
+              }
+              cout<<endl;
+              cout<<line<<endl;
+              if(lineCount == 96){
+                break;
+              }
+            }
+            cout<<endl;
+            cout<<"Enter your answer : ";
+            cin>>answer;
+
+            if(answer == 1){
+            cout<<endl;
+            cout << "Correct Answer!" << endl;
+            score += 1;
+            attempt += 1;
+            }
+            else{
+            cout << "Correct answer  1. Divide and conquer method " << endl;
+            cout<<"\n";
+            cout<<"Explanation: Binary search is an efficient algorithm for finding an item from a sorted list of items. It works by repeatedly dividing in half the portion of the list that could contain the item, until you've narrowed down the possible locations to just one."<<endl;
+            cout << endl;
+            wrong += 1;
+            attempt += 1;
+            cout<<endl;
+            cout << wrong << " wrong answer : " << endl;
+            }
+            if(timeUp() == true){
+                break;
+            }
+            }
+            // 16
+            if(arr[15] == arr[randomIndex]){
+            ifstream file02("array.txt");
+            string line; 
+            int lineCount =0;
+            while(getline(file02, line ) && lineCount < 99){
+                lineCount++;
+
+              if(lineCount < 97){
+                continue;
+              }
+              cout<<endl;
+              cout<<line<<endl;
+              if(lineCount == 99){
+                break;
+              }
+            }
+            cout<<endl;
+            cout<<"Enter your answer : ";
+            cin>>answer;
+
+            if(answer == 1){
+            cout<<endl;
+            cout << "Correct Answer!" << endl;
+            score += 1;
+            attempt += 1;
+            }
+            else{
+            cout << "Correct answer 1. A string literal " << endl;
+            cout<<"\n";
+            cout<<"Explanation: In C++, when you initialize character arrays, a trailing '\0' (zero of type char) is appended to the string initializer"<<endl;
+            cout << endl;
+            wrong += 1;
+            attempt += 1;
+            cout<<endl;
+            cout << wrong << " wrong answer : " << endl;
+            }
+            if(timeUp() == true){
+                break;
+            }
+            }
+            // 17   
+            if(arr[16] == arr[randomIndex]){
+            ifstream file02("array.txt");
+            string line; 
+            int lineCount =0;
+            while(getline(file02, line ) && lineCount < 102){
+                lineCount++;
+
+              if(lineCount < 100){
+                continue;
+              }
+              cout<<endl;
+              cout<<line<<endl;
+              if(lineCount == 102){
+                break;
+              }
+            }
+            cout<<endl;
+            cout<<"Enter your answer : ";
+            cin>>answer;
+
+            if(answer == 2){
+            cout<<endl;
+            cout << "Correct Answer!" << endl;
+            score += 1;
+            attempt += 1;
+            }
+            else{
+            cout << "Correct answer  2. Container of objects of  " << endl;
+            cout<<"\n";
+            cout<<"Explanation: Array contains elements only of the same type."<<endl;
+            cout << endl;
+            wrong += 1;
+            attempt += 1;
+            cout<<endl;
+            cout << wrong << " wrong answer : " << endl;
+            }
+            if(timeUp() == true){
+                break;
+            }
+            }
+            // 18   
+            if(arr[17] == arr[randomIndex]){
+            ifstream file02("array.txt");
+            string line; 
+            int lineCount =0;
+            while(getline(file02, line ) && lineCount < 105){
+                lineCount++;
+
+              if(lineCount < 103){
+                continue;
+              }
+              cout<<endl;
+              cout<<line<<endl;
+              if(lineCount == 105){
+                break;
+              }
+            }
+            cout<<endl;
+            cout<<"Enter your answer : ";
+            cin>>answer;
+
+            if(answer == 1){
+            cout<<endl;
+            cout << "Correct Answer!" << endl;
+            score += 1;
+            attempt += 1;
+            }
+            else{
+            cout << "Correct answer  1. Linear search algorithm  " << endl;
+            cout<<"\n";
+            cout<<"Explanation: The memory address of the first element of an array is called first address, foundation address, or base address."<<endl;
+            cout << endl;
+            wrong += 1;
+            attempt += 1;
+            cout<<endl;
+            cout << wrong << " wrong answer : " << endl;
+            }
+            if(timeUp() == true){
+                break;
+            }
+            }
+            // 19 
+            if(arr[18] == arr[randomIndex]){
+            ifstream file02("array.txt");
+            string line; 
+            int lineCount =0;
+            while(getline(file02, line ) && lineCount < 108){
+                lineCount++;
+
+              if(lineCount < 106){
+                continue;
+              }
+              cout<<endl;
+              cout<<line<<endl;
+              if(lineCount == 108){
+                break;
+              }
+            }
+            cout<<endl;
+            cout<<"Enter your answer : ";
+            cin>>answer;
+
+            if(answer == 3){
+            cout<<endl;
+            cout << "Correct Answer!" << endl;
+            score += 1;
+            attempt += 1;
+            }
+            else{
+            cout << "Correct answer 2. Arrays  " << endl;
+            cout<<"\n";
+            cout<<"Explanation: Arrays are a consecutive group of variables (memory locations) that all have the same type and share a common name."<<endl;
+            cout << endl;
+            wrong += 1;
+            attempt += 1;
+            cout<<endl;
+            cout << wrong << " wrong answer : " << endl;
+            }
+            if(timeUp() == true){
+                break;
+            }
+            }
+            // 20  
+            if(arr[19] == arr[randomIndex]){
+            ifstream file02("array.txt");
+            string line; 
+            int lineCount =0;
+            while(getline(file02, line ) && lineCount < 111){
+                lineCount++;
+
+              if(lineCount < 109){
+                continue;
+              }
+              cout<<endl;
+              cout<<line<<endl;
+              if(lineCount == 111){
+                break;
+              }
+            }
+            cout<<endl;
+            cout<<"Enter your answer : ";
+            cin>>answer;
+
+            if(answer == 4){
+            cout<<endl;
+            cout << "Correct Answer!" << endl;
+            score += 1;
+            attempt += 1;
+            }
+            else{
+            cout << "Correct answer 4. All of them" << endl;
+            cout<<"\n";
+            cout<<"Explanation: All of them can be used to for finding value in an array"<<endl;
+            cout << endl;
+            wrong += 1;
+            attempt += 1;
+            cout<<endl;
+            cout << wrong << " wrong answer : " << endl;
+            }
+            if(timeUp() == true){
+                break;
+            }
+            }
+            // 21  
+            if(arr[20] == arr[randomIndex]){
+            ifstream file02("array.txt");
+            string line; 
+            int lineCount =0;
+            while(getline(file02, line ) && lineCount < 114){
+                lineCount++;
+
+              if(lineCount < 112){
+                continue;
+              }
+              cout<<endl;
+              cout<<line<<endl;
+              if(lineCount == 114){
+                break;
+              }
+            }
+            cout<<endl;
+            cout<<"Enter your answer : ";
+            cin>>answer;
+
+            if(answer == 3){
+            cout<<endl;
+            cout << "Correct Answer!" << endl;
+            score += 1;
+            attempt += 1;
+            }
+            else{
+            cout << "Correct answer 3. Enumerations" << endl;
+            cout<<"\n";
+            cout<<"Explanation: All of them can be used to for finding value in an array"<<endl;
+            cout << endl;
+            wrong += 1;
+            attempt += 1;
+            cout<<endl;
+            cout << wrong << " wrong answer : " << endl;
+            }
+            if(timeUp() == true){
+                break;
+            }
+            }
+            // 22  
+            if(arr[21] == arr[randomIndex]){
+            ifstream file02("array.txt");
+            string line; 
+            int lineCount =0;
+            while(getline(file02, line ) && lineCount < 117){
+                lineCount++;
+
+              if(lineCount < 115){
+                continue;
+              }
+              cout<<endl;
+              cout<<line<<endl;
+              if(lineCount == 117){
+                break;
+              }
+            }
+            cout<<endl;
+            cout<<"Enter your answer : ";
+            cin>>answer;
+
+            if(answer == 1){
+            cout<<endl;
+            cout << "Correct Answer!" << endl;
+            score += 1;
+            attempt += 1;
+            }
+            else{
+            cout << "Correct answer 1. Sub-scripts" << endl;
+            cout<<"\n";
+            cout<<"Explanation: All of them can be used to for finding value in an array"<<endl;
+            cout << endl;
+            wrong += 1;
+            attempt += 1;
+            cout<<endl;
+            cout << wrong << " wrong answer : " << endl;
+            }
+            if(timeUp() == true){
+                break;
+            }
+            }
+            // 24
+            if(arr[23] == arr[randomIndex]){
+            ifstream file02("array.txt");
+            string line; 
+            int lineCount =0;
+            while(getline(file02, line ) && lineCount < 120){
+                lineCount++;
+
+              if(lineCount < 118){
+                continue;
+              }
+              cout<<endl;
+              cout<<line<<endl;
+              if(lineCount == 120){
+                break;
+              }
+            }
+            cout<<endl;
+            cout<<"Enter your answer : ";
+            cin>>answer;
+
+            if(answer == 4){
+            cout<<endl;
+            cout << "Correct Answer!" << endl;
+            score += 1;
+            attempt += 1;
+            }
+            else{
+            cout << "Correct answer 4. Both C and B" << endl;
+            cout<<"\n";
+            cout<<"Explanation:  Array is the simplest form of an Array in which the elements are stored linearly and can be accessed individually by specifying the index value of each element stored in the array."<<endl;
+            cout << endl;
+            wrong += 1;
+            attempt += 1;
+            cout<<endl;
+            cout << wrong << " wrong answer : " << endl;
+            }
+            if(timeUp() == true){
+                break;
+            }
+            }
+            // 25  
+            if(arr[24] == arr[randomIndex]){
+            ifstream file02("array.txt");
+            string line; 
+            int lineCount =0;
+            while(getline(file02, line ) && lineCount < 123){
+                lineCount++;
+
+              if(lineCount < 121){
+                continue;
+              }
+              cout<<endl;
+              cout<<line<<endl;
+              if(lineCount == 123){
+                break;
+              }
+            }
+            cout<<endl;
+            cout<<"Enter your answer : ";
+            cin>>answer;
+
+            if(answer ==3){
+            cout<<endl;
+            cout << "Correct Answer!" << endl;
+            score += 1;
+            attempt += 1;
+            }
+            else{
+            cout << "Correct answer 3. Program is loaded into the memory" << endl;
+            cout<<"\n";
+            cout<<"Explanation: Static arrays are initialized to zero."<<endl;
+            cout << endl;
+            wrong += 1;
+            attempt += 1;
+            cout<<endl;
+            cout << wrong << " wrong answer : " << endl;
+            }
+            if(timeUp() == true){
+                break;
+            }
+            }
+            // 26
+            if(arr[25] == arr[randomIndex]){
+            ifstream file02("array.txt");
+            string line; 
+            int lineCount =0;
+            while(getline(file02, line ) && lineCount < 126){
+                lineCount++;
+
+              if(lineCount < 124){
+                continue;
+              }
+              cout<<endl;
+              cout<<line<<endl;
+              if(lineCount == 126){
+                break;
+              }
+            }
+            cout<<endl;
+            cout<<"Enter your answer : ";
+            cin>>answer;
+
+            if(answer == 3){
+            cout<<endl;
+            cout << "Correct Answer!" << endl;
+            score += 1;
+            attempt += 1;
+            }
+            else{
+            cout << "Correct answer 3. One-dimensional array" << endl;
+            cout<<"\n";
+            cout<<"Explanation: Static arrays are initialized to zero."<<endl;
+            cout << endl;
+            wrong += 1;
+            attempt += 1;
+            cout<<endl;
+            cout << wrong << " wrong answer : " << endl;
+            }
+            if(timeUp() == true){
+                break;
+            }
+            }
+            // 27 
+            if(arr[26] == arr[randomIndex]){
+            ifstream file02("array.txt");
+            string line; 
+            int lineCount =0;
+            while(getline(file02, line ) && lineCount < 129){
+                lineCount++;
+
+              if(lineCount < 127){
+                continue;
+              }
+              cout<<endl;
+              cout<<line<<endl;
+              if(lineCount == 129){
+                break;
+              }
+            }
+            cout<<endl;
+            cout<<"Enter your answer : ";
+            cin>>answer;
+
+            if(answer == 2){
+            cout<<endl;
+            cout << "Correct Answer!" << endl;
+            score += 1;
+            attempt += 1;
+            }
+            else{
+            cout << "Correct answer  2. Double subscripted array" << endl;
+            cout<<"\n";
+            cout<<"Explanation:  The expression within the brackets is referred to as a subscript"<<endl;
+            cout << endl;
+            wrong += 1;
+            attempt += 1;
+            cout<<endl;
+            cout << wrong << " wrong answer : " << endl;
+            }
+            if(timeUp() == true){
+                break;
+            }
+            }
+            // 28  
+            if(arr[27] == arr[randomIndex]){
+            ifstream file02("array.txt");
+            string line; 
+            int lineCount =0;
+            while(getline(file02, line ) && lineCount < 132){
+                lineCount++;
+
+              if(lineCount < 130){
+                continue;
+              }
+              cout<<endl;
+              cout<<line<<endl;
+              if(lineCount == 132){
+                break;
+              }
+            }
+            cout<<endl;
+            cout<<"Enter your answer : ";
+            cin>>answer;
+
+            if(answer == 2){
+            cout<<endl;
+            cout << "Correct Answer!" << endl;
+            score += 1;
+            attempt += 1;
+            }
+            else{
+            cout << "Correct answer   2. Elements of an array" << endl;
+            cout<<"\n";
+            cout<<"Explanation: Each variable or object in an array is called an element. Unlike stricter languages, such as Java, you can store a mixture of data types in a single array."<<endl;
+            cout << endl;
+            wrong += 1;
+            attempt += 1;
+            cout<<endl;
+            cout << wrong << " wrong answer : " << endl;
+            }
+            if(timeUp() == true){
+                break;
+            }
+            }
+            // 29  
+            if(arr[28] == arr[randomIndex]){
+            ifstream file02("array.txt");
+            string line; 
+            int lineCount =0;
+            while(getline(file02, line ) && lineCount < 135){
+                lineCount++;
+
+              if(lineCount < 133){
+                continue;
+              }
+              cout<<endl;
+              cout<<line<<endl;
+              if(lineCount == 135){
+                break;
+              }
+            }
+            cout<<endl;
+            cout<<"Enter your answer : ";
+            cin>>answer;
+
+            if(answer == 2){
+            cout<<endl;
+            cout << "Correct Answer!" << endl;
+            score += 1;
+            attempt += 1;
+            }
+            else{
+            cout << "Correct answer  2. Multi-dimensional array  " << endl;
+            cout<<"\n";
+            cout<<"Explanation: We can put anything in an array and make it array of arrays."<<endl;
+            cout << endl;
+            wrong += 1;
+            attempt += 1;
+            cout<<endl;
+            cout << wrong << " wrong answer : " << endl;
+            }
+            if(timeUp() == true){
+                break;
+            }
+            }
+            // 30  
+            if(arr[29] == arr[randomIndex]){
+            ifstream file02("array.txt");
+            string line; 
+            int lineCount =0;
+            while(getline(file02, line ) && lineCount < 141){
+                lineCount++;
+
+              if(lineCount < 139){
+                continue;
+              }
+              cout<<endl;
+              cout<<line<<endl;
+              if(lineCount == 141){
+                break;
+              }
+            }
+            cout<<endl;
+            cout<<"Enter your answer : ";
+            cin>>answer;
+
+            if(answer == 1){
+            cout<<endl;
+            cout << "Correct Answer!" << endl;
+            score += 1;
+            attempt += 1;
+            }
+            else{
+            cout << "Correct answer   1. Initializing array   " << endl;
+            cout<<"\n";
+            cout<<"Explanation: None"<<endl;
+            cout << endl;
+            wrong += 1;
+            attempt += 1;
+            cout<<endl;
+            cout << wrong << " wrong answer : " << endl;
+            }
+            if(timeUp() == true){
+                break;
+            }
+            }
+            // 31  
+            if(arr[30] == arr[randomIndex]){
+            ifstream file02("array.txt");
+            string line; 
+            int lineCount =0;
+            while(getline(file02, line ) && lineCount < 144){
+                lineCount++;
+
+              if(lineCount < 142){
+                continue;
+              }
+              cout<<endl;
+              cout<<line<<endl;
+              if(lineCount == 144){
+                break;
+              }
+            }
+            cout<<endl;
+            cout<<"Enter your answer : ";
+            cin>>answer;
+
+            if(answer == 4){
+            cout<<endl;
+            cout << "Correct Answer!" << endl;
+            score += 1;
+            attempt += 1;
+            }
+            else{
+            cout << "Correct answer   4. Both A and B  " << endl;
+            cout<<"\n";
+            cout<<"Explanation:Subscript array- displays the values of a particular element in an array dealing with an integer value."<<endl;
+            cout << endl;
+            wrong += 1;
+            attempt += 1;
+            cout<<endl;
+            cout << wrong << " wrong answer : " << endl;
+            }
+            if(timeUp() == true){
+                break;
+            }
+            }
+            // 32  
+            if(arr[31] == arr[randomIndex]){
+            ifstream file02("array.txt");
+            string line; 
+            int lineCount =0;
+            while(getline(file02, line ) && lineCount < 150){
+                lineCount++;
+
+              if(lineCount < 148){
+                continue;
+              }
+              cout<<endl;
+              cout<<line<<endl;
+              if(lineCount == 150){
+                break;
+              }
+            }
+            cout<<endl;
+            cout<<"Enter your answer : ";
+            cin>>answer;
+
+            if(answer == 4){
+            cout<<endl;
+            cout << "Correct Answer!" << endl;
+            score += 1;
+            attempt += 1;
+            }
+            else{
+            cout << "Correct answer  4. 8" << endl;
+            cout<<"\n";
+            cout<<"Explanation: 8 - For an array with 9 elements, the index numbers will be from 0 to 8. - To find the index number of the last element, we need to subtract 1 from the total number of elements in the array. - Therefore, the index number of the last element of an array with 9 elements is 8. "<<endl;
+            cout << endl;
+            wrong += 1;
+            attempt += 1;
+            cout<<endl;
+            cout << wrong << " wrong answer : " << endl;
+            }
+            if(timeUp() == true){
+                break;
+            }
+            }
+            // 33  
+            if(arr[32] == arr[randomIndex]){
+            ifstream file02("array.txt");
+            string line; 
+            int lineCount =0;
+            while(getline(file02, line ) && lineCount < 155){
+                lineCount++;
+
+              if(lineCount < 151){
+                continue;
+              }
+              cout<<endl;
+              cout<<line<<endl;
+              if(lineCount == 155){
+                break;
+              }
+            }
+            cout<<endl;
+            cout<<"Enter your answer : ";
+            cin>>answer;
+
+            if(answer == 2){
+            cout<<endl;
+            cout << "Correct Answer!" << endl;
+            score += 1;
+            attempt += 1;
+            }
+            else{
+            cout << "Correct answer  2. An array is a series of elements of the same type in contiguous memory locations" << endl;
+            cout<<"\n";
+            cout<<"Explanation: None "<<endl;
+            cout << endl;
+            wrong += 1;
+            attempt += 1;
+            cout<<endl;
+            cout << wrong << " wrong answer : " << endl;
+            }
+            if(timeUp() == true){
+                break;
+            }
+            }
+            // 34  
+            if(arr[33] == arr[randomIndex]){
+            ifstream file02("array.txt");
+            string line; 
+            int lineCount =0;
+            while(getline(file02, line ) && lineCount < 158){
+                lineCount++;
+
+              if(lineCount < 156){
+                continue;
+              }
+              cout<<endl;
+              cout<<line<<endl;
+              if(lineCount == 158){
+                break;
+              }
+            }
+            cout<<endl;
+            cout<<"Enter your answer : ";
+            cin>>answer;
+
+            if(answer == 1){
+            cout<<endl;
+            cout << "Correct Answer!" << endl;
+            score += 1;
+            attempt += 1;
+            }
+            else{
+            cout << "Correct answer  1. array[6]; " << endl;
+            cout<<"\n";
+            cout<<"Explanation:  The array location starts from zero, So it can accessed by array[6]. "<<endl;
+            cout << endl;
+            wrong += 1;
+            attempt += 1;
+            cout<<endl;
+            cout << wrong << " wrong answer : " << endl;
+            }
+            if(timeUp() == true){
+                break;
+            }
+            }
+            // 35  
+            if(arr[34] == arr[randomIndex]){
+            ifstream file02("array.txt");
+            string line; 
+            int lineCount =0;
+            while(getline(file02, line ) && lineCount < 161){
+                lineCount++;
+
+              if(lineCount < 159){
+                continue;
+              }
+              cout<<endl;
+              cout<<line<<endl;
+              if(lineCount == 161){
+                break;
+              }
+            }
+            cout<<endl;
+            cout<<"Enter your answer : ";
+            cin>>answer;
+
+            if(answer == 4){
+            cout<<endl;
+            cout << "Correct Answer!" << endl;
+            score += 1;
+            attempt += 1;
+            }
+            else{
+            cout << "Correct answer   4. array;" << endl;
+            cout<<"\n";
+            cout<<"Explanation:  The array location starts from zero, So it can accessed by array[6]. "<<endl;
+            cout << endl;
+            wrong += 1;
+            attempt += 1;
+            cout<<endl;
+            cout << wrong << " wrong answer : " << endl;
+            }
+            if(timeUp() == true){
+                break;
+            }
+            }
+            // 36 
+            if(arr[35] == arr[randomIndex]){
+            ifstream file02("array.txt");
+            string line; 
+            int lineCount =0;
+            while(getline(file02, line ) && lineCount < 176){
+                lineCount++;
+
+              if(lineCount < 162){
+                continue;
+              }
+              cout<<endl;
+              cout<<line<<endl;
+              if(lineCount == 176){
+                break;
+              }
+            }
+            cout<<endl;
+            cout<<"Enter your answer : ";
+            cin>>answer;
+
+            if(answer == 2){
+            cout<<endl;
+            cout << "Correct Answer!" << endl;
+            score += 1;
+            attempt += 1;
+            }
+            else{
+            cout << "Correct answer   2. 27" << endl;
+            cout<<"\n";
+            cout<<"Explanation: None. "<<endl;
+            cout << endl;
+            wrong += 1;
+            attempt += 1;
+            cout<<endl;
+            cout << wrong << " wrong answer : " << endl;
+            }
+            if(timeUp() == true){
+                break;
+            }
+            }
+            // 37  
+            if(arr[36] == arr[randomIndex]){
+            ifstream file02("array.txt");
+            string line; 
+            int lineCount =0;
+            while(getline(file02, line ) && lineCount < 188){
+                lineCount++;
+
+              if(lineCount < 177){
+                continue;
+              }
+              cout<<endl;
+              cout<<line<<endl;
+              if(lineCount == 188){
+                break;
+              }
+            }
+            cout<<endl;
+            cout<<"Enter your answer : ";
+            cin>>answer;
+
+            if(answer == 4){
+            cout<<endl;
+            cout << "Correct Answer!" << endl;
+            score += 1;
+            attempt += 1;
+            }
+            else{
+            cout << "Correct answer   4. compile time error" << endl;
+            cout<<"\n";
+            cout<<"Explanation: None. "<<endl;
+            cout << endl;
+            wrong += 1;
+            attempt += 1;
+            cout<<endl;
+            cout << wrong << " wrong answer : " << endl;
+            }
+            if(timeUp() == true){
+                break;
+            }
+            }
+            // 38  
+            if(arr[37] == arr[randomIndex]){
+            ifstream file02("array.txt");
+            string line; 
+            int lineCount =0;
+            while(getline(file02, line ) && lineCount < 200){
+                lineCount++;
+
+              if(lineCount < 189){
+                continue;
+              }
+              cout<<endl;
+              cout<<line<<endl;
+              if(lineCount == 200){
+                break;
+              }
+            }
+            cout<<endl;
+            cout<<"Enter your answer : ";
+            cin>>answer;
+
+            if(answer == 3){
+            cout<<endl;
+            cout << "Correct Answer!" << endl;
+            score += 1;
+            attempt += 1;
+            }
+            else{
+            cout << "Correct answer   3. ABC  " << endl;
+            cout<<"\n";
+            cout<<"Explanation: None. "<<endl;
+            cout << endl;
+            wrong += 1;
+            attempt += 1;
+            cout<<endl;
+            cout << wrong << " wrong answer : " << endl;
+            }
+            if(timeUp() == true){
+                break;
+            }
+            }
+            // 39 
+            if(arr[38] == arr[randomIndex]){
+            ifstream file02("array.txt");
+            string line; 
+            int lineCount =0;
+            while(getline(file02, line ) && lineCount < 211){
+                lineCount++;
+
+              if(lineCount < 201){
+                continue;
+              }
+              cout<<endl;
+              cout<<line<<endl;
+              if(lineCount == 211){
+                break;
+              }
+            }
+            cout<<endl;
+            cout<<"Enter your answer : ";
+            cin>>answer;
+
+            if(answer ==1){
+            cout<<endl;
+            cout << "Correct Answer!" << endl;
+            score += 1;
+            attempt += 1;
+            }
+            else{
+            cout << "Correct answer  1. -30 " << endl;
+            cout<<"\n";
+            cout<<"Explanation: None. "<<endl;
+            cout << endl;
+            wrong += 1;
+            attempt += 1;
+            cout<<endl;
+            cout << wrong << " wrong answer : " << endl;
+            }
+            if(timeUp() == true){
+                break;
+            }
+            }
+            // 40  
+            if(arr[39] == arr[randomIndex]){
+            ifstream file02("array.txt");
+            string line; 
+            int lineCount =0;
+            while(getline(file02, line ) && lineCount < 211){
+                lineCount++;
+
+              if(lineCount < 201){
+                continue;
+              }
+              cout<<endl;
+              cout<<line<<endl;
+              if(lineCount == 211){
+                break;
+              }
+            }
+            cout<<endl;
+            cout<<"Enter your answer : ";
+            cin>>answer;
+
+            if(answer ==1){
+            cout<<endl;
+            cout << "Correct Answer!" << endl;
+            score += 1;
+            attempt += 1;
+            }
+            else{
+            cout << "Correct answer  1. -30 " << endl;
+            cout<<"\n";
+            cout<<"Explanation: None. "<<endl;
+            cout << endl;
+            wrong += 1;
+            attempt += 1;
+            cout<<endl;
+            cout << wrong << " wrong answer : " << endl;
+            }
+            if(timeUp() == true){
+                break;
+            }
+            }
+            // 41 
+            if(arr[40] == arr[randomIndex]){
+            ifstream file02("array.txt");
+            string line; 
+            int lineCount =0;
+            while(getline(file02, line ) && lineCount < 214){
+                lineCount++;
+
+              if(lineCount < 212){
+                continue;
+              }
+              cout<<endl;
+              cout<<line<<endl;
+              if(lineCount == 214){
+                break;
+              }
+            }
+            cout<<endl;
+            cout<<"Enter your answer : ";
+            cin>>answer;
+
+            if(answer == 3){
+            cout<<endl;
+            cout << "Correct Answer!" << endl;
+            score += 1;
+            attempt += 1;
+            }
+            else{
+            cout << "Correct answer  3. Both B and C    " << endl;
+            cout<<"\n";
+            cout<<"Explanation: The compiler will probably compile and even run"<<endl;
+            cout << endl;
+            wrong += 1;
+            attempt += 1;
+            cout<<endl;
+            cout << wrong << " wrong answer : " << endl;
+            }
+            if(timeUp() == true){
+                break;
+            }
+            }
+            // 42 
+            if(arr[41] == arr[randomIndex]){
+            ifstream file02("array.txt");
+            string line; 
+            int lineCount =0;
+            while(getline(file02, line ) && lineCount < 217){
+                lineCount++;
+
+              if(lineCount < 215){
+                continue;
+              }
+              cout<<endl;
+              cout<<line<<endl;
+              if(lineCount == 217){
+                break;
+              }
+            }
+            cout<<endl;
+            cout<<"Enter your answer : ";
+            cin>>answer;
+
+            if(answer == 2){
+            cout<<endl;
+            cout << "Correct Answer!" << endl;
+            score += 1;
+            attempt += 1;
+            }
+            else{
+            cout << "Correct answer  2. 4  " << endl;
+            cout<<"\n";
+            cout<<"Explanation: Length of Array = size of array/size of 1 datatype that you are using to define an array."<<endl;
+            cout << endl;
+            wrong += 1;
+            attempt += 1;
+            cout<<endl;
+            cout << wrong << " wrong answer : " << endl;
+            }
+            if(timeUp() == true){
+                break;
+            }
+            }
+            // 43  
+            if(arr[42] == arr[randomIndex]){
+            ifstream file02("array.txt");
+            string line; 
+            int lineCount =0;
+            while(getline(file02, line ) && lineCount < 220){
+                lineCount++;
+
+              if(lineCount < 218){
+                continue;
+              }
+              cout<<endl;
+              cout<<line<<endl;
+              if(lineCount == 220){
+                break;
+              }
+            }
+            cout<<endl;
+            cout<<"Enter your answer : ";
+            cin>>answer;
+
+            if(answer == 2){
+            cout<<endl;
+            cout << "Correct Answer!" << endl;
+            score += 1;
+            attempt += 1;
+            }
+            else{
+            cout << "Correct answer   2. Elements of array " << endl;
+            cout<<"\n";
+            cout<<"Explanation: Length of Array = size of array/size of 1 datatype that you are using to define an array."<<endl;
+            cout << endl;
+            wrong += 1;
+            attempt += 1;
+            cout<<endl;
+            cout << wrong << " wrong answer : " << endl;
+            }
+            if(timeUp() == true){
+                break;
+            }
+            }
+            // 44 
+            if(arr[43] == arr[randomIndex]){
+            ifstream file02("array.txt");
+            string line; 
+            int lineCount =0;
+            while(getline(file02, line ) && lineCount < 223){
+                lineCount++;
+
+              if(lineCount < 221){
+                continue;
+              }
+              cout<<endl;
+              cout<<line<<endl;
+              if(lineCount == 223){
+                break;
+              }
+            }
+            cout<<endl;
+            cout<<"Enter your answer : ";
+            cin>>answer;
+
+            if(answer == 4){
+            cout<<endl;
+            cout << "Correct Answer!" << endl;
+            score += 1;
+            attempt += 1;
+            }
+            else{
+            cout << "Correct answer  4. Divide and conquer" << endl;
+            cout<<"\n";
+            cout<<"Explanation: If the program examined every star in the star catalog in order starting with the first, an algorithm called linear search, the computer might have to examine all 2,539,913 stars to find the star you were looking for, in the worst case."<<endl;
+            cout << endl;
+            wrong += 1;
+            attempt += 1;
+            cout<<endl;
+            cout << wrong << " wrong answer : " << endl;
+            }
+            if(timeUp() == true){
+                break;
+            }
+            }
+            // 45  
+            if(arr[44] == arr[randomIndex]){
+            ifstream file02("array.txt");
+            string line; 
+            int lineCount =0;
+            while(getline(file02, line ) && lineCount < 226){
+                lineCount++;
+
+              if(lineCount < 224){
+                continue;
+              }
+              cout<<endl;
+              cout<<line<<endl;
+              if(lineCount == 226){
+                break;
+              }
+            }
+            cout<<endl;
+            cout<<"Enter your answer : ";
+            cin>>answer;
+
+            if(answer == 2){
+            cout<<endl;
+            cout << "Correct Answer!" << endl;
+            score += 1;
+            attempt += 1;
+            }
+            else{
+            cout << "Correct answer 2. Initialization is part of the definition" << endl;
+            cout<<"\n";
+            cout<<"Explanation:  If an array is to be completely initialized."<<endl;
+            cout << endl;
+            wrong += 1;
+            attempt += 1;
+            cout<<endl;
+            cout << wrong << " wrong answer : " << endl;
+            }
+            if(timeUp() == true){
+                break;
+            }
+            }
+            // 46  yeh abhi kerna hai
+            if(arr[45] == arr[randomIndex]){
+            ifstream file02("array.txt");
+            string line; 
+            int lineCount =0;
+            while(getline(file02, line ) && lineCount < 237){
+                lineCount++;
+
+              if(lineCount < 227){
+                continue;
+              }
+              cout<<endl;
+              cout<<line<<endl;
+              if(lineCount == 237){
+                break;
+              }
+            }
+            cout<<endl;
+            cout<<"Enter your answer : ";
+            cin>>answer;
+
+            if(answer == 1){
+            cout<<endl;
+            cout << "Correct Answer!" << endl;
+            score += 1;
+            attempt += 1;
+            }
+            else{
+            cout << "Correct answer 1. -30" << endl;
+            cout<<"\n";
+            cout<<"Explanation:  If an array is to be completely initialized."<<endl;
+            cout << endl;
+            wrong += 1;
+            attempt += 1;
+            cout<<endl;
+            cout << wrong << " wrong answer : " << endl;
+            }
+            if(timeUp() == true){
+                break;
+            }
+            }
+            // 47  
+            if(arr[46] == arr[randomIndex]){
+            ifstream file02("array.txt");
+            string line; 
+            int lineCount =0;
+            while(getline(file02, line ) && lineCount < 248){
+                lineCount++;
+
+              if(lineCount < 238){
+                continue;
+              }
+              cout<<endl;
+              cout<<line<<endl;
+              if(lineCount == 248){
+                break;
+              }
+            }
+            cout<<endl;
+            cout<<"Enter your answer : ";
+            cin>>answer;
+
+            if(answer == 1){
+            cout<<endl;
+            cout << "Correct Answer!" << endl;
+            score += 1;
+            attempt += 1;
+            }
+            else{
+            cout << "Correct answer 1. -30" << endl;
+            cout<<"\n";
+            cout<<"Explanation:  If an array is to be completely initialized."<<endl;
+            cout << endl;
+            wrong += 1;
+            attempt += 1;
+            cout<<endl;
+            cout << wrong << " wrong answer : " << endl;
+            }
+            if(timeUp() == true){
+                break;
+            }
+            }
+            // 49
+            if(arr[48] == arr[randomIndex]){
+            ifstream file02("array.txt");
+            string line; 
+            int lineCount =0;
+            while(getline(file02, line ) && lineCount < 259){
+                lineCount++;
+
+              if(lineCount < 249){
+                continue;
+              }
+              cout<<endl;
+              cout<<line<<endl;
+              if(lineCount == 259){
+                break;
+              }
+            }
+            cout<<endl;
+            cout<<"Enter your answer : ";
+            cin>>answer;
+
+            if(answer == 1){
+            cout<<endl;
+            cout << "Correct Answer!" << endl;
+            score += 1;
+            attempt += 1;
+            }
+            else{
+            cout << "Correct answer 1. -30" << endl;
+            cout<<"\n";
+            cout<<"Explanation:  If an array is to be completely initialized."<<endl;
+            cout << endl;
+            wrong += 1;
+            attempt += 1;
+            cout<<endl;
+            cout << wrong << " wrong answer : " << endl;
+            }
+            if(timeUp() == true){
+                break;
+            }
+            }
+            // 50
+            if(arr[49] == arr[randomIndex]){
+            ifstream file02("array.txt");
+            string line; 
+            int lineCount =0;
+            while(getline(file02, line ) && lineCount < 270){
+                lineCount++;
+
+              if(lineCount < 260){
+                continue;
+              }
+              cout<<endl;
+              cout<<line<<endl;
+              if(lineCount == 270){
+                break;
+              }
+            }
+            cout<<endl;
+            cout<<"Enter your answer : ";
+            cin>>answer;
+
+            if(answer == 1){
+            cout<<endl;
+            cout << "Correct Answer!" << endl;
+            score += 1;
+            attempt += 1;
+            }
+            else{
+            cout << "Correct answer 1. -30" << endl;
+            cout<<"\n";
+            cout<<"Explanation:  If an array is to be completely initialized."<<endl;
+            cout << endl;
+            wrong += 1;
+            attempt += 1;
+            cout<<endl;
+            cout << wrong << " wrong answer : " << endl;
+            }
+            if(timeUp() == true){
+                break;
+            }
+            }
+
+         }
+
+      
+      
+
+    } 
+      if (score >= maxAnswers){
+        maxAnswers = score;
+    }
+    score -=attempt;
+    cout << "Time's up! Maximum answers given: " << maxAnswers << endl;
+    cout << " Wrong answers given: " << wrong << endl;
+    cout << " No. of question you've attempted: " << attempt << endl;
+    score -=attempt;
+    cout << " Your total score is : " << score << endl;
+
+
+
 }
 
 
+void createAccount() {
+    string username, password;
+    cout << "Enter a username: "<< endl << "(Do not leave any space)"<<endl;;
+    cin >> username;
+    cout << "Enter a password: ";
+    cin >> password;
+
+    ofstream file("user_data.txt", ios::app);
+    if (file.is_open()) {
+        file << username << "," << password << "\n";
+        file.close();
+        cout << "Account created successfully!" << endl;
+
+        cout<<endl;
+        cout<<"Do you want to log in  : "<<endl<<" if yes Enter 2 "<<endl;
+        int yes;
+        cin>>yes;
+
+        if(yes == 2 ){
+            login();
+        }else if(yes != 2 ){
+            main();
+        }
+        else{
+            main();
+        }
+
+    } else {
+        cout << "Unable to open file." << endl;
+    }
+}
+
+
+void login() {
+    string username, password;
+    cout << "Enter your username:  "<<endl<< "(Do not leave any space)"<<endl;
+    cin >> username;
+    cout << "Enter your password: ";
+    cin >> password;
+
+    ifstream file("user_data.txt");
+    if (file.is_open()) {
+        string line;
+        while (getline(file, line)) {
+            size_t pos = line.find(",");
+            string storedUsername = line.substr(0, pos);
+            string storedPassword = line.substr(pos + 1);
+            if (username == storedUsername && password == storedPassword) {
+                cout << "Login successful!" << endl;
+                file.close();
+                return;
+            }
+        }
+        cout << "Invalid username or password." << endl;
+        file.close();
+    } else {
+        cout << "Unable to open file." << endl;
+    }
+}
