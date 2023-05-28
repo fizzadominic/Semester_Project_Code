@@ -1,40 +1,39 @@
-//  FIZZA DOMINIC KHOKHAR
-//  ID: SP23-BSCS-0029
 #include <iostream>
 #include <Windows.h> // for adding delay after each cout statment
 #include <unistd.h>
 #include <iostream>
 #include <string>
 #include <ctime>
-#include <cstdlib>
+#include <cstdlib> // for character 
 #include <windows.h>
 #include <stdlib.h>
 #include <chrono>
 #include <thread>
-#include <fstream>
+#include <fstream>  
+#include <algorithm> // for sorting 
+#include <cstdlib>
+#include <conio.h>
 
-int maxAnswers = 0;  // global varaibles to have an access 
+    int maxAnswers = 0;  // global varaibles to have an access 
     int answer; 
     int attempt= 0;
     int score = 0;
     int wrong = 0;
-    const  char leave;
+    size_t scoreCount = 0;
+
+    
+     
 
 using namespace std;
 
-void createAccount();
-void login();
-void  Basic();
-void  Functions();
-void  Array();
+string createAccount();
+string login();
+void Basic();
+void Functions();
+void Array();
+int main();
 
-bool done (){    // trying to get the record 
-          if(true){
-            return true;
-          }
-    
-       return false ;
-}
+
 bool timeUp()   // timer function
 {
     static std::chrono::steady_clock::time_point begin = std::chrono::steady_clock::now();
@@ -50,11 +49,48 @@ bool timeUp()   // timer function
     return false;
 }
 
-// to keep a record of scores 
+
+// To Keep the record of Scores and to sort em for final diplay 
+struct Score {
+    string playerName; 
+    int score;          
+};
+
+// Sort in descending order
+bool compareScores( Score& score1,  Score& score2) {
+    return score1.score > score2.score; 
+    
+}
+
+void saveScoresToFile(const Score* scores, size_t count, const string& fileName) {
+   ofstream file("record.txt", ios::app  );
+    if (file.is_open()) {
+       
+        
+
+            // for(size_t i=0; i< count, i++ ){
+                
+            file << scores[0].playerName << " " << scores[0].score << "\n";
+            file << scores[1].playerName << " " << scores[1].score << "\n";
+            file << scores[2].playerName << " " << scores[2].score << "\n";
+            file << scores[3].playerName << " " << scores[3].score << "\n";
+            file << scores[4].playerName << " " << scores[4].score << "\n";
+            // }
+            
+            
+        
+        file.close();
+        // cout << "Scores saved to file." << endl;
+    } else {
+       cout << "Unable to open file." << endl;
+    }
+}
 
 
 int main(){
-       cout << "1. Create an account" << endl;
+
+        
+        cout << "1. Create an account" << endl;
         cout << "2. Login" << endl;
         cout << "3. Exit" << endl;
         cout << "Enter your choice: ";
@@ -75,13 +111,18 @@ int main(){
                 cout << "Invalid choice. Try again." << endl;
         }
 
+       
 
-      cout <<"______________________________________________________________________ "<<endl;
+
+    cout <<"______________________________________________________________________ "<<endl;
     cout<<"     "<< "        Welcome to C++ challange             " << endl;
     cout <<"______________________________________________________________________ "<<endl; 
-     cout<<endl;
-    int toStart;
+    cout<<endl;
+    char toStart;
     cout << "Enter 1 to start : ";
+    
+    
+       
     cin >> toStart;  
     if (toStart == 1){  
         sleep(1);
@@ -110,29 +151,45 @@ int main(){
 
         
     }
+   
       sleep(1);
     cout<<"       " <<" Choose the Category you want to answer :"<<endl;
     
     int category;
     cout<<"Catogory 1 : Basic  C++  "<<endl;
     cout<<"Enter  : 1 "<<endl;
+    cout<<endl;
     cout<<"Catogory 2 : Functions  C++ "<<endl;
     cout<<"Enter  : 2 "<<endl;
+    cout<<endl;
     cout<<"Catogory 3 : Array  C++ "<<endl;
     cout<<"Enter  : 3 "<<endl;
+    cout<<endl;
+
+   
+    
+    
+
     
     cout<<"Enter Category : ";
     cin>>category;
     if(category==1){
 
        Basic(); 
+       timeUp();
     }else if(category==2 ){
 
        Functions();
+      timeUp();
     }else{
 
         Array();
+        timeUp();
     }
+     sleep(.5);
+    system("cls");
+   
+    
   return 0;
 }
 
@@ -2634,28 +2691,107 @@ void  Basic(){
         
     }
   }
+    sleep(2);
+    system("cls");
     
     if (score > maxAnswers)
     {
         maxAnswers = score;
     }
+    attempt -= score;
     cout << "Time's up! Maximum answers given: " << maxAnswers << endl;
+    cout<<endl;
     cout << " Wrong answers given: " << wrong << endl;
+    cout<<endl;
     cout << " Your total score is : " << score << endl;
+    cout<<endl;
     cout << " Your total attempts are : " << attempt << endl;
     cout<<endl;
-    cout<<"Enter to leave : "<<endl;
+
+
+        // size_t is used for array indexing and loop counting
+    const size_t MAX_SCORES = 5;   
+    ifstream file("loginInfo.txt");
+    string name;
+    file>>name;
+    // cout<<name;
+    Score scores[MAX_SCORES];
+            scores[scoreCount++] = {name, score};
+        
+    
+
+    // Sort the scores in descending order
+    saveScoresToFile(scores, MAX_SCORES, ("record.txt"));
+    sort(scores, scores+ MAX_SCORES, compareScores);
+
+    // Display the sorted scores
+    for(int i= 0; i<= MAX_SCORES; i++){
+        if(i==0){
+
+          cout<<"Player Name " << scores[i].playerName<< " , score  "<<scores[i].score<<endl;
+          break;
+        }
+      
+        else if(i==1){
+            cout<<"Player Name " << scores[i].playerName<< " , score  "<<scores[i].score<<endl;
+            break;
+
+        }
+        else if(i==2){
+            cout<<"Player Name " << scores[i].playerName<< " , score  "<<scores[i].score<<endl;
+            break;
+
+        }
+        else if(i==3){
+            cout<<"Player Name " << scores[i].playerName<< " , score  "<<scores[i].score<<endl;
+            break;
+
+        }
+        else {
+            cout<<"Player Name " << scores[i].playerName<< " , score  "<<scores[i].score<<endl;
+            break;
+
+        }
+
+    }
+
+    // to see top fife records :
+   
+    cout<<"Enter to see top 5 Records : "<<endl;
+    while(true){
+       if(cin.get() == ' '){
+          for(int i= 0; i<= MAX_SCORES; i++){
+            cout<<"Player Name " << scores[i].playerName<< " , score  "<<scores[i].score<<endl;
+       }
+    }
+    else{
+         cout<<"There is no previous data : "<<endl;
+        cout<<endl;
+        cout<<"Thanks for playing this games :) "<<endl;
+        break;
+    }
+    }
+    // to exit :
+    // cout<<"Enter to Exit : "<<endl;
+    while(true){
+    if(cin.get() == ' '){
+       
+       break;
+ 
+    }
+    else{
+        cout<<"Thanks for playing this games :) "<<endl;
+        break;
+    }
+    }
+
     
  
 
   
 }
 void  Functions(){
-//    int maxAnswers = 0;
-//      int answer = 0;
-//      int score= 0;
-//      int wrong = 0;
-//      int attempt = 0;
+
 
      srand(time(NULL));
      int arr[] = {0, 1, 2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49};
@@ -4681,23 +4817,106 @@ void  Functions(){
 
             }
      }
+    sleep(2);
+    system("cls");
 
      if (score >= maxAnswers){
         maxAnswers = score;
     }
-   cout << "Time's up! Maximum answers given: " << maxAnswers << std::endl;
-   cout << " Wrong answers given: " << wrong << std::endl;
-   cout << " No. of question you've attempted: " << attempt << std::endl;
-   cout << " Your total score is : " << score << std::endl;
+  
+   cout << "Time's up! Maximum answers given: " << maxAnswers << endl;
+   cout<<endl;
+   cout << " Wrong answers given: " << wrong << endl;
+   cout<<endl;
+   cout << " No. of question you've attempted: " << attempt << endl;
+   cout<<endl;
+   attempt -=score;
+   cout << " Your total score is : " << score <<endl;
+   cout<<endl;
+
+
+    // size_t is used for array indexing and loop counting
+    const size_t MAX_SCORES = 5;   
+    ifstream file("loginInfo.txt");
+    string name;
+    file>>name;
+    // cout<<name;
+    Score scores[MAX_SCORES];
+    scores[scoreCount++] = {name, score};  
+
+    // Sort the scores in descending order
+    saveScoresToFile(scores, MAX_SCORES, ("record.txt"));
+    sort(scores, scores+ MAX_SCORES, compareScores);
+
+    // Display the sorted scores
+    for(int i= 0; i<= MAX_SCORES; i++){
+        if(i==0){
+
+          cout<<"Player Name " << scores[i].playerName<< " , score  "<<scores[i].score<<endl;
+          break;
+        }
+      
+        else if(i==1){
+            cout<<"Player Name " << scores[i].playerName<< " , score  "<<scores[i].score<<endl;
+            break;
+
+        }
+        else if(i==2){
+            cout<<"Player Name " << scores[i].playerName<< " , score  "<<scores[i].score<<endl;
+            break;
+
+        }
+        else if(i==3){
+            cout<<"Player Name " << scores[i].playerName<< " , score  "<<scores[i].score<<endl;
+            break;
+
+        }
+        else {
+            cout<<"Player Name " << scores[i].playerName<< " , score  "<<scores[i].score<<endl;
+            break;
+
+        }
+
+    }
+
+
+    // to see top fife records :
+   
+    cout<<"Enter to see top 5 Records : "<<endl;
+    ifstream MyRecord("record.txt");
+    while(true){
+       if(cin.get() == ' '){
+          for(int i= 0; i<= MAX_SCORES; i++){
+            cout<<"Player Name " << scores[i].playerName<< " , score  "<<scores[i].score<<endl;
+       }
+    }
+       else{
+        cout<<"There is no previous data : "<<endl;
+        cout<<endl;
+        cout<<"Thanks for playing this games :) "<<endl;
+        break;
+       }
+    }
+    // to exit :
+    // cout<<"Enter to Exit : "<<endl;
+    while(true){
+    if(cin.get() == ' '){
+       
+       break;
+    }else{
+        cout<<"Thanks for playing this games :) "<<endl;
+        break;
+    }
+
+   
+    }
+
+   
 }
 
 
 void  Array(){
-//   int maxAnswers = 0;
-//     int answer = 0;
-//     int score= 0;
-//     int wrong = 0;
-//     int attempt = 0;
+
     srand(time(NULL));
 
    
@@ -6524,7 +6743,7 @@ void  Array(){
                 break;
             }
             }
-            // 46  yeh abhi kerna hai
+            // 46 
             if(arr[45] == arr[randomIndex]){
             ifstream file02("array.txt");
             string line; 
@@ -6695,31 +6914,141 @@ void  Array(){
       
 
     } 
+    sleep(2);
+    system("cls");
+
+
       if (score >= maxAnswers){
         maxAnswers = score;
     }
-    score -=attempt;
+   
     cout << "Time's up! Maximum answers given: " << maxAnswers << endl;
+    cout<<endl;
     cout << " Wrong answers given: " << wrong << endl;
+    cout<<endl;
     cout << " No. of question you've attempted: " << attempt << endl;
-    score -=attempt;
+    cout<<endl;
+    attempt -=score;
     cout << " Your total score is : " << score << endl;
+    cout<<endl;
+
+        // size_t is used for array indexing and loop counting
+    const size_t MAX_SCORES = 5;   
+    ifstream file("loginInfo.txt");
+    string name;
+    file>>name; 
+    // cout<<name;
+     Score scores[MAX_SCORES];
+      scores[scoreCount] = {name, score};
+    
+    // to save record in file 
+    saveScoresToFile(scores, MAX_SCORES, ("record.txt"));
+    // Sort the scores in descending order
+    sort(scores, scores+ MAX_SCORES, compareScores);
+
+    // Display the sorted scores
+    for(int i= 0; i<= MAX_SCORES; i++){
+        if(i==0){
+
+          cout<<"Player Name " << scores[i].playerName<< " , score  "<<scores[i].score<<endl;
+          break;
+        }
+      
+        else if(i==1){
+            cout<<"Player Name " << scores[i].playerName<< " , score  "<<scores[i].score<<endl;
+            break;
+
+        }
+        else if(i==2){
+            cout<<"Player Name " << scores[i].playerName<< " , score  "<<scores[i].score<<endl;
+            break;
+
+        }
+        else if(i==3){
+            cout<<"Player Name " << scores[i].playerName<< " , score  "<<scores[i].score<<endl;
+            break;
+
+        }
+        else {
+            cout<<"Player Name " << scores[i].playerName<< " , score  "<<scores[i].score<<endl;
+            break;
+
+        }
+
+    }
+
+    // to see top fife records :
+   
+    cout<<"Enter to see top 5 Records : "<<endl;
+    while(true){
+       cin.get() == ' ';
+          for(int i= 0; i<= MAX_SCORES; i++){
+            cout<<"Player Name " << scores[i].playerName<< " , score  "<<scores[i].score<<endl;
+       }
+    
+    
+    if(!cin.get() == ' '){
+        cout<<"There is no previous data : "<<endl;
+        cout<<endl;
+        cout<<"Thanks for playing this games :) "<<endl;
+        break;
+    }
+    }
+    // to exit :
+    // cout<<"Enter to Exit : "<<endl;
+    while(true){
+    if(cin.get() == ' '){
+       
+       break;
+ 
+    }else{
+        break;
+    }
+    }
+
 
 
 
 }
 
+string getPassword()
+{
+   string password;
+    char ch;
 
-void createAccount() {
+    while (true) {
+        ch = _getch();  // Read a single character without echoing it
+        if (ch == '\r') // Enter key pressed
+            break;
+        else if (ch == '\b') { // Backspace key pressed
+            if (!password.empty()) {
+                password.pop_back();
+                cout << "\b \b"; // Move cursor back, erase character, move cursor back again
+            }
+        }
+        else {
+            password += ch;
+           cout << '*'; // Print asterisk instead of the actual character
+        }
+    }
+
+   cout << endl; // Move cursor to the next line
+    return password;
+}
+
+
+string createAccount() {
+
+
     string username, password;
-    cout << "Enter a username: "<< endl << "(Do not leave any space)"<<endl;;
+    cout << "Enter a username: ";
     cin >> username;
     cout << "Enter a password: ";
-    cin >> password;
+    password = getPassword();
 
-    ofstream file("user_data.txt", ios::app);
+    ofstream file("loginInfo.txt" , ios::app);  
     if (file.is_open()) {
-        file << username << "," << password << "\n";
+        file << username << " " << password << endl;
         file.close();
         cout << "Account created successfully!" << endl;
 
@@ -6728,7 +7057,7 @@ void createAccount() {
         int yes;
         cin>>yes;
 
-        if(yes == 2 ){
+        if(yes == 2 ){  
             login();
         }else if(yes != 2 ){
             main();
@@ -6739,33 +7068,43 @@ void createAccount() {
 
     } else {
         cout << "Unable to open file." << endl;
+        sleep(5);
+        system("cls");
     }
+    return "";
 }
 
 
-void login() {
+string login(){
+    
     string username, password;
-    cout << "Enter your username:  "<<endl<< "(Do not leave any space)"<<endl;
+    cout << "Enter your username:  "<<endl;
     cin >> username;
     cout << "Enter your password: ";
-    cin >> password;
+    password = getPassword();
 
-    ifstream file("user_data.txt");
+    ifstream file("loginInfo.txt", ios::app);
     if (file.is_open()) {
         string line;
         while (getline(file, line)) {
-            size_t pos = line.find(",");
+            size_t pos = line.find(" ");
             string storedUsername = line.substr(0, pos);
             string storedPassword = line.substr(pos + 1);
             if (username == storedUsername && password == storedPassword) {
                 cout << "Login successful!" << endl;
                 file.close();
-                return;
+                return "";
             }
         }
         cout << "Invalid username or password." << endl;
         file.close();
+        sleep(5);
+        system("cls");
     } else {
         cout << "Unable to open file." << endl;
+        sleep(5);
+        system("cls");
     }
+    return ""; // Return an empty string if login is unsuccessful
+    system("cls");
 }
